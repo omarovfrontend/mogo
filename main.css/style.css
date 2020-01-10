@@ -223,10 +223,17 @@ h1, h2, h3, h4, h5, h6 {
     padding: 80px 0;
 }
 
+.section--devices {
+    background: url('../images/device-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    opacity: .9;
+}
+
 .section__header {
     width: 100%;
     max-width: 960px;
-    margin: 0 auto 40px;
+    margin: 0 auto 50px;
     text-align: center;
 }
 
@@ -313,7 +320,6 @@ h1, h2, h3, h4, h5, h6 {
             /* Statistics */
 .statistics {
     background-color: #95e1d3;
-    margin: 100px auto;
 }
 
 .stat {
@@ -342,4 +348,67 @@ h1, h2, h3, h4, h5, h6 {
 .stat__text {
     font-size: 14px;
     text-transform: uppercase;
+}
+
+
+/* Services */
+.services {
+    display: flex;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #e5e5e5;
+    display: block;
+    margin: 50px auto;
+    width: 100%;
+}
+
+.services__item {
+    flex: 1 1 0;
+    position: relative;
+    padding-left: 90px;
+    padding-right: 35px;
+}
+
+.services__icon {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+}
+
+.services__title {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.services__text {
+    font-size: 15px;
+    color: #999;
+}
+
+/* Devices */
+.devices {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    bottom: -80px;
+}
+
+.devices__item {
+    display: block;
+}
+
+.devices__item--phone {
+    position: absolute;
+    bottom: -90px;
+    right: 0;
+    z-index: 1;
 }
