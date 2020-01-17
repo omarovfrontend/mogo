@@ -32,6 +32,20 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 30px;
 }
 
+.header.fixed {
+    background-color: #eb6865;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translate3d(0, 0, 0);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+}
+
+.header.active {
+    background-color: #eb6865;
+}
+
 .header_inner {
     display: flex;
     justify-content: space-between;
@@ -91,14 +105,80 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+            /* Nav Toggle */
+.nav-toggle {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 1;
+    width: 30px;
+    padding: 10px 0;
+    font-size: 0;
+    color: transparent;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-toggle__item {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition: background .2s linear;
+}
+
+.nav-toggle.active .nav-toggle__item {
+    background: none;
+}
+
+.nav-toggle__item::before,
+.nav-toggle__item::after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    z-index: 1;
+    transition: transform .2s linear;
+}
+
+.nav-toggle__item::before {
+    top: -8px;
+}
+
+.nav-toggle__item::after {
+    bottom: -8px;
+}
+
+.nav-toggle.active .nav-toggle__item::before {
+    transform-origin: left top;
+    transform: rotate(45deg) translate3D(0px, -3px, 0);
+}
+
+.nav-toggle.active .nav-toggle__item::after {
+    transform-origin: left bottom;
+    transform: rotate(-45deg) translate3D(0px, 3px, 0);
+}
+
+
 
             /* intro */
 .intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
     width: 100%;
     height: 100vh;
+    min-height: 820px;
     background-image: url('../images/intro-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -1207,10 +1287,35 @@ hr {
 }
 
 @media (max-width: 770px) {
+
+    /* Intro */
+    .intro {
+        min-height: 650px;
+    }
+
+    /* Header */
+    .header {
+        padding: 10px 0;
+    }
     
     /* Nav */
     .nav {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #eb6865;
+        width: 100%;
+    }
+
+    .nav__link {
+        display: block;
+        margin: 0;
+        padding: 8px 20px;
+    }
+
+    .nav-toggle {
+        display: block;
     }
 
     /* Section */
