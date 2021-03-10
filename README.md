@@ -1,3 +1,3 @@
 **Mogo**
 
-Demo - https://omarov-frontend.github.io/mogo/
+Demo - https://omarovfrontend.github.io/mogo/
